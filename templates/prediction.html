@@ -1,0 +1,128 @@
+<html>
+<head>
+  <title>Machine Learning Model Showcase</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='predictionstyle.css') }}">
+</head>
+<body>
+  <h1>Machine Learning Model Showcase</h1>
+
+  <form action="{{ url_for('process_input') }}" method="post">
+  <div id="input-form">
+    <h2>Default:if yes-1 , if no-0</h2>
+    <input type="number" name="input1" id="input-value" placeholder="Enter 0 or 1">
+  </div>
+
+  <div id="input-form">
+    <h2>Bank Balance:</h2>
+      <input type="number" name="input2" id="input-value" placeholder="Enter your Bank Balance">
+  </div>
+
+  <div id="input-form">
+    <h2>Housing Loan:if yes-1 , if no-0</h2>
+      <input type="number" name="input3" id="input-value" placeholder="Enter 0 or 1">
+  </div>
+
+  <div id="input-form">
+    <h2>Personal Loan:if yes-1 , if no-0</h2>
+      <input type="number" name="input4" id="input-value" placeholder="Enter 0 or 1">
+  </div>
+
+  <div id="input-form">
+    <h2>Duration :</h2>
+     <input type="number" name="input5" id="input-value" placeholder="Enter phone call duration in secs">
+  </div>
+   
+  <div id="input-form">
+    <h2>No of contacts performed:</h2>
+      <input type="number" name="input6" id="input-value" placeholder="Enter no of days">
+  </div>
+   
+  <div id="input-form">
+    <h2>No of days passed after last contact :</h2>
+        <input type="number" name="input7" id="input-value" placeholder="Enter no of days">
+  </div>
+
+  <div id="input-form">
+    <h2>Job Type:</h2>
+    <select id="input-value" name="input8">
+      <option value="admin.">Admin</option>
+      <option value="blue-collar">Blue-Collar</option>
+      <option value="entreprenuer">Entreprenuer</option>
+      <option value="housemaid">Housemaid</option>
+      <option value="management">Management</option>
+      <option value="retired">Retired</option>
+      <option value="self-employed">Self-employed</option>
+      <option value="services">Services</option>
+      <option value="student">Student</option>
+      <option value="technician">Technician</option>
+      <option value="unemployed">Unemployed</option>
+      <option value="unknown">Unknown</option>
+    </select> 
+  </div>
+  
+  <div id="input-form">
+    <h2>Marital Status:</h2>
+    <select id="input-value" name="input9">
+      <option value="single">Single</option>
+      <option value="married">Married</option>
+      <option value="divorced">Divorced</option>
+    </select>
+  </div>
+  
+  <div id="input-form">
+    <h2>Education:</h2>
+    <select id="input-value" name="input10">
+      <option value="primary">Primary</option>
+      <option value="secondary">Secondary</option>
+      <option value="tertiary">Teritary</option>
+      <option value="unknown">Unknown</option>
+    </select>
+  </div>
+   
+  <div id="input-form">
+    <h2>Contact Type:</h2>
+    <select id="input-value" name="input11">
+      <option value="unknown">Unknown</option>
+      <option value="cellular">Cellular</option>
+      <option value="telephone">Telephone</option>
+    </select> 
+  </div>
+  
+  <div id="input-form">
+    <h2>Previous Outcome of the product :</h2>
+    <select id="input-value" name="input12">
+      <option value="unknown">Unknown</option>
+      <option value="failure">Failure</option>
+      <option value="success">Success</option>
+      <option value="other">Other</option>
+    </select> 
+  </div>
+
+  <div id="input-form">
+    <h2>Age Group:</h2>
+    <select id="input-value" name="input13">
+      <option value="18-25">18-25</option>
+      <option value="26-35">26-35</option>
+      <option value="36-45">36-45</option>
+      <option value="46-55">46-55</option>
+      <option value="56-65">56-65</option>
+      <option value="66-75">66-75</option>
+      <option value="76-85">76-85</option>
+      <option value="86-95">86-95</option>
+    </select> 
+     
+  
+  </div>
+  <input type="submit" value="Submit">
+</form>
+
+  <div id="prediction-result">
+    <h2>Prediction Result:</h2>
+    <p id="prediction-value">
+      {{result}}
+    </p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
